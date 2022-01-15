@@ -4,7 +4,8 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
-RUN npm install --force
+RUN npm i -D --save-exact mini-css-extract-plugin@2.4.5
+RUN npm install --silent
 RUN npm install react-scripts -g --silent
 COPY . /usr/src/app
 RUN npm run build
