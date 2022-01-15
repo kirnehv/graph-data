@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  web:
+    container_name: graph-data
+    build:
+      context: .
+      target: graph-data
+    environment:
+      TZ: "America/Los_Angeles"
+    networks:
+      - reverse
+networks:
+  reverse:
+    name: reverse_default
